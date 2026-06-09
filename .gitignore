@@ -1,0 +1,69 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Data & large files
+*.pt
+*.pth
+*.pkl
+*.npy
+*.npz
+*.h5
+*.hdf5
+*.zip
+*.tar
+*.tar.gz
+
+# Model runs / checkpoints
+runs/
+saver/
+checkpoints/
+wandb/
+logs/
+*.log
+
+# Temporary feature caches
+features/
+stainvecs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Dataset directories (not to be committed)
+PLISM-sm-processed_np_float32_optimized_4way_ver3/
+PLISM-wsi-processed/
+PLSIM/
+SUPCON/
+STAINVEC/
+stain_vector/weights/
+uni_demo/features/
+
+# Misc
+*.csv
+*.json
+!phase1_stain_encoder/
+!phase2_stain_aware_ssl/

@@ -1,0 +1,37 @@
+SEED: 27
+DOMAIN: sm
+FEAT_DIR: /home/work/workspace/nahcooy/stain/phase1_stain_encoder/features/sm
+RUN_ROOT: /home/work/workspace/nahcooy/stain/phase1_stain_encoder/runs
+DEVICE: cuda:3
+FEAT_DIM: 1024
+BAG:
+  BAG_SIZE: 32
+  BATCH_KEYS: 64
+  BAGS_PER_KEY: 16
+  STEPS_PER_EPOCH: 500
+MODEL:
+  AGG_TYPE: abmil   # primary: abmil | ablations: cross_attention, mean_pool
+  EMBED_DIM: 256
+  PROJ_HIDDEN_DIM: 1024
+  PROJ_DROPOUT: 0.1
+  AGG_HIDDEN_DIM: 256   # abmil only
+  AGG_HEADS: 8          # cross_attention only
+  AGG_DROPOUT: 0.1
+  TORCH_COMPILE: true
+TRAIN:
+  EPOCHS: 500
+  BASE_LR: 3.0e-4
+  WEIGHT_DECAY: 1.0e-4
+  BETAS: [0.9, 0.999]
+  WARMUP_EPOCHS: 30
+  MIN_LR_RATIO: 0.01
+  GRAD_CLIP_NORM: 1.0
+AMP:
+  USE_AMP: true
+  DTYPE: bf16
+LOSS:
+  TEMPERATURE: 0.07
+  POSITIVE_LOSS_WEIGHT: 0.1
+LOG_EVERY_N_STEPS: 50
+SAVE_EVERY_N_EPOCHS: 50
+RESUME_PATH: null
